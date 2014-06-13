@@ -1,0 +1,5 @@
+
+<div ng-repeat="(key,message) in flareMessages" ng-class="classes(message)">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true" ng-click="dismiss(key)">&times;</button>
+  {{ message.content }}
+</div>

@@ -1,0 +1,20 @@
+{
+  "author": "Ryan Fink",
+  "name": "angular-flare",
+  "version": "0.0.1",
+  "homepage": "https://github.com/rfink/angular-flare",
+  "description": "A better flash messaging module that survives page reloads, allows timeouts, and utilizes bootstrap by default",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rfink/angular-chrono.git"
+  },
+  "dependencies": {
+    "angular": "~1.2.0"
+  },
+  "devDependencies": {
+    "angular-scenario": "~1.2.0",
+    "angular-mocks": "~1.2.0"
+  },
+  "main": "./dist/angular-flare.js",
+  "ignore": ["./node_modules/"]
+}
