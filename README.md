@@ -1,7 +1,7 @@
 angular-flare
 =============
 
-Advance angular tool for flash messaging.  I've seen a few decent flash
+Advanced angular tool for flash messaging.  I've seen a few decent flash
 messaging tools out there for angular, but they always seemed to be missing
 a few features I needed/liked.  So here is angular-flash.  Note:  it uses
 twitter bootstrap class names in the directive by default.
