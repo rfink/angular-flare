@@ -1,9 +1,9 @@
 {
   "name": "angular-flare",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Advanced flash messaging for angular",
   "scripts": {
-    "test": "npm test"
+    "test": "grunt karma"
   },
   "repository": {
     "type": "git",

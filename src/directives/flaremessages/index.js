@@ -13,6 +13,9 @@ function flareMessagesDirective(flare) {
 
     flare.subscribe('message', function onMessage() {
       flare.startTimers();
+      if (!$scope.$$phase) {
+        $scope.$digest();
+      }
     });
 
     $scope.flareMessages = flare.messages;
