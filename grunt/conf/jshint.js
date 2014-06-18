@@ -33,7 +33,10 @@ module.exports = {
       afterEach: false,
       it: false,
       before: false,
-      after: false
+      after: false,
+      expect: false,
+      inject: false,
+      waitsFor: false
     }
   },
   src: [
