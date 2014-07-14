@@ -3,7 +3,8 @@
  * Service for flare messages
  * @constructor
  */
-function FlareService() {
+function FlareService($timeout) {
+  this.$timeout = $timeout;
   this.counter = 0;
   this.levels = ['error', 'warn', 'info', 'success'];
   this.levelClasses = {};
@@ -53,7 +54,7 @@ FlareService.prototype.dismiss = function dismiss(key) {
   var element = this.messages[key];
   if (element) {
     if (element.timeout) {
-      clearTimeout(element.timeout);
+      this.$timeout.cancel(element.timeout);
     }
     delete this.messages[key];
     this.notify('dismiss', element);
@@ -111,7 +112,7 @@ FlareService.prototype.startTimers = function startTimers() {
       return;
     }
     if (message.ttl && !message.timeout) {
-      message.timeout = setTimeout(function() {
+      message.timeout = self.$timeout(function() {
         delete self.messages[key];
         self.notify('timeout', message);
       }, message.ttl);
@@ -120,4 +121,4 @@ FlareService.prototype.startTimers = function startTimers() {
 };
 
 angular.module('angular-flare')
-  .service('flare', [FlareService]);
+  .service('flare', ['$timeout', FlareService]);

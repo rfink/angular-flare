@@ -1,6 +1,6 @@
 {
   "name": "angular-flare",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Advanced flash messaging for angular",
   "scripts": {
     "test": "grunt karma"

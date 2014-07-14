@@ -6,16 +6,9 @@ function flareMessagesDirective(flare) {
   /**
    * Flare message controller for directive
    */
-  function flareMessageController($scope) {
-    flare.subscribe('timeout', function onTimeout() {
-      $scope.$digest();
-    });
-
+  function flareMessageController($scope, $timeout) {
     flare.subscribe('message', function onMessage() {
       flare.startTimers();
-      if (!$scope.$$phase) {
-        $scope.$digest();
-      }
     });
 
     $scope.flareMessages = flare.messages;
@@ -46,4 +39,4 @@ function flareMessagesDirective(flare) {
 }
 
 angular.module('angular-flare')
-  .directive('flareMessages', ['flare', flareMessagesDirective]);
+  .directive('flareMessages', ['flare', '$timeout', flareMessagesDirective]);
