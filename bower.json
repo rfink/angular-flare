@@ -6,7 +6,7 @@
   "description": "A better flash messaging module that survives page reloads, allows timeouts, and utilizes bootstrap by default",
   "repository": {
     "type": "git",
-    "url": "git://github.com/rfink/angular-chrono.git"
+    "url": "git://github.com/rfink/angular-flare.git"
   },
   "dependencies": {
     "angular": "~1.2.0"
