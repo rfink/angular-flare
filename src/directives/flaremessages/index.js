@@ -32,7 +32,7 @@ function flareMessagesDirective(flare) {
   return {
     templateUrl: 'directives/flaremessages/index.tpl.html',
     restrict: 'EA',
-    replace: true,
+    replace: false,
     scope: {},
     controller: ['$scope', flareMessageController]
   };
