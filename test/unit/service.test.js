@@ -1,10 +1,18 @@
+/*global describe*/
+/*global beforeEach*/
+/*global it*/
+/*global expect*/
+/*global inject*/
+/*global waitsFor*/
 
 describe('The Flare Service', function() {
   var flareSvc;
+  var tmr;
 
   beforeEach(module('angular-flare'));
-  beforeEach(inject(function(flare) {
+  beforeEach(inject(function(flare, $timeout) {
     flareSvc = flare;
+    tmr = $timeout;
   }));
 
   it('should have no messages initially', function() {
@@ -32,6 +40,7 @@ describe('The Flare Service', function() {
     expect(msg.ttl).toEqual(ttl);
     expect(msg.timeout).not.toBeNull();
     flareSvc.startTimers();
+    tmr.flush();
     waitsFor(function() {
       return Object.keys(flareSvc.messages).length === 0;
     }, 200);
