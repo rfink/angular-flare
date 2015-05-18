@@ -47,7 +47,7 @@ inside the created div.  You can also add a timeout to clear the message automat
     });
 ```
 
-This messages will automatically self-destruct after 1 second.
+This message will automatically self-destruct after 1 second.
 
 ** These messages are persisted in the service vs the directive, so they will still display
 across views, as long as you have the flare-messages directive (or your own). **
