@@ -53,6 +53,21 @@ FlareService.prototype.init =
   };
 
 /**
+ * Empty existing message queue
+ */
+FlareService.prototype.empty = function empty(level) {
+  var self = this;
+
+  angular.forEach(this.messages, function(msg, key) {
+    if (level === self.messages[key].level || !level) {
+      self.dismiss(key);
+    }
+  });
+
+  return this;
+};
+
+/**
  * Dismiss a given alert key
  */
 FlareService.prototype.dismiss = function dismiss(key) {

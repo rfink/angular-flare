@@ -68,4 +68,21 @@ describe('The Flare Service', function() {
     flareSvc.error('MERF!');
     flareSvc.dismiss(0);
   });
+
+  it('should empty messages as expected', function() {
+    var keys;
+    flareSvc.error('MERF');
+    flareSvc.error('DERF');
+    flareSvc.success('Success!');
+    flareSvc.empty('error');
+    keys = Object.keys(flareSvc.messages);
+    expect(keys.length).toEqual(1);
+    flareSvc.error('MERF');
+    flareSvc.error('DERF');
+    keys = Object.keys(flareSvc.messages);
+    expect(keys.length).toEqual(3);
+    flareSvc.empty();
+    keys = Object.keys(flareSvc.messages);
+    expect(keys.length).toEqual(0);
+  });
 });
