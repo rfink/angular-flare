@@ -1,7 +1,7 @@
 {
   "author": "Ryan Fink",
   "name": "angular-flare",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/rfink/angular-flare",
   "description": "A better flash messaging module that survives page reloads, allows timeouts, and utilizes bootstrap by default",
   "repository": {
